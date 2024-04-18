@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/api/",
+            "program": "${workspaceFolder}/api/index.py",
+            "console": "integratedTerminal",
+            "env": {
+                "API_HOST": "0.0.0.0",
+                "API_PORT": "8080", //Customize your port here
+                "API_STATIC": "${workspaceFolder}/api/static"
+            }
+        }
+    ]
+}
