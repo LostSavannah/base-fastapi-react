@@ -1,7 +1,7 @@
 import os 
 
 from fastapi import FastAPI
-from internal.http import cors, spa
+from internal.http import cors, SPAStaticFiles
 
 from routers import about
 
@@ -15,7 +15,7 @@ app.middleware("http")(cors())
 app.include_router(about.router, prefix="/about", tags=["About"])
 
 #Mounting spa static
-app.mount("/", spa(directory), name="static")
+app.mount("/", SPAStaticFiles(directory=directory, html=True), name="static")
 
 if __name__ == '__main__':
     import uvicorn

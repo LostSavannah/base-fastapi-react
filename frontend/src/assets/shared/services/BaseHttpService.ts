@@ -6,7 +6,7 @@ export default class BaseHttpService{
 
     protected async get<TResult>(url:string):Promise<TResult>{
         return new Promise<TResult>((resolve, reject) => {
-            fetch(url, {
+            fetch(`${baseUrl}/${url}`, {
                 method: "get"
             }).then(response => {
                 
@@ -19,7 +19,7 @@ export default class BaseHttpService{
     
     protected async getRaw(url:string):Promise<string>{
         return new Promise<string>((resolve, reject) => {
-            fetch(url, {
+            fetch(`${baseUrl}/${url}`, {
                 method: "get"
             }).then(response => {
                 
@@ -43,7 +43,7 @@ export default class BaseHttpService{
                 }
             }
 
-            fetch(url, requestInit).then(response => {
+            fetch(`${baseUrl}/${url}`, requestInit).then(response => {
                 response.json()
                     .then(result => resolve(result as TResult))
                     .catch(reject);
@@ -54,7 +54,7 @@ export default class BaseHttpService{
 
     protected put<T, TResult>(url:string, parameter:string|T, forceJson:boolean = false):Promise<TResult>{
         return new Promise<TResult>((resolve, reject) => {
-            fetch(url, {
+            fetch(`${baseUrl}/${url}`, {
                 method: "put",
                 body: !forceJson && typeof parameter === "string" ? parameter :  JSON.stringify(parameter)
             }).then(response => {
@@ -67,7 +67,7 @@ export default class BaseHttpService{
     
     protected delete<TResult>(url:string):Promise<TResult>{
         return new Promise<TResult>((resolve, reject) => {
-            fetch(url, {
+            fetch(`${baseUrl}/${url}`, {
                 method: "delete"
             }).then(response => {
                 response.json()
@@ -78,6 +78,6 @@ export default class BaseHttpService{
     }
 
     protected listen(url:string):EventSource{
-        return new EventSource(url);
+        return new EventSource(`${baseUrl}/${url}`);
     }
 }

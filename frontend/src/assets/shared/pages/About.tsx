@@ -1,5 +1,8 @@
+import { useAbout } from "../hooks/useAbout"
+
 export default function About() {
+  const {about} = useAbout();
   return (
-    <div>About</div>
+    <div>{about}</div>
   )
 }

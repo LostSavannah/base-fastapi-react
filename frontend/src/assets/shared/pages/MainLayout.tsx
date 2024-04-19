@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 export default function MainLayout(){
     const pages = [
         {
-            location: "/",
+            location: "/home-page",
             text: "Home",
         },
         {
-            location: "/about",
+            location: "/about-page",
             text: "About",
         }
     ]

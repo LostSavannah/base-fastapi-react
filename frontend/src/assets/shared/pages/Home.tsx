@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <div>🏠</div>
+    <div>🦀 UN SIRI FAZENDO BARRA! 🦀</div>
   )
 }
