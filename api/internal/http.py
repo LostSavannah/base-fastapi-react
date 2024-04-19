@@ -1,5 +1,4 @@
 from fastapi import Request, Response
-from fastapi.datastructures import Headers
 from fastapi.staticfiles import StaticFiles
 from starlette.exceptions import HTTPException
 

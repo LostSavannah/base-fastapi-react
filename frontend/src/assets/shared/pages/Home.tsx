@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <div>🦀 UN SIRI FAZENDO BARRA! 🦀</div>
+    <div> WE ARE MAKING A FASTAPI-REACT PROJECT WITH THIS ONE!!! 🔈🔈 </div>
   )
 }
